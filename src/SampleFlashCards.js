@@ -3,7 +3,7 @@ export const sampleFlashCardList=[
         id:1,
         question:"First Question?",
         answer:"First Answer",
-        options:[
+        incorrect_answers:[
             "Option 1a",
             "Option 1b",
             "Option 1c",
@@ -14,7 +14,7 @@ export const sampleFlashCardList=[
         id:2,
         question:"Second Question?",
         answer:"Second Answer",
-        options:[
+        incorrect_answers:[
             "Option 2a",
             "Option 2b",
             "Option 2c",
@@ -25,7 +25,7 @@ export const sampleFlashCardList=[
         id:3,
         question:"Second Question?",
         answer:"Second Answer",
-        options:[
+        incorrect_answers:[
             "Option 3a",
             "Option 3b",
             "Option 3c",
@@ -36,7 +36,7 @@ export const sampleFlashCardList=[
         id:4,
         question:"Fourth Question?",
         answer:"Fourth Answer",
-        options:[
+        incorrect_answers:[
             "Option 4a",
             "Option 4b",
             "Option 4c",

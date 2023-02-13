@@ -2,9 +2,7 @@ import React from 'react'
 import './Flashcard.css'
 
 export default function Flashcard({flashCard}){
-  
   const [flip,setFlip] = React.useState(false);
-  
   return (
     <div className="card" id="card" onClick={()=>{
         setFlip(!flip)
@@ -12,17 +10,22 @@ export default function Flashcard({flashCard}){
       <div className='card-body'>
         {
           flip===true ? 
-            flashCard.answer
+            flashCard.correct_answer
           :
             flashCard.question
         }
         <br/>
         {flip === false && 
-          flashCard.options.map((option,number) => {
-            return (
-              <h4 key={number}>{option}</h4>
-            )
-          })
+        <div>
+          <ol>
+            {flashCard.incorrect_answers.map((option,number) => {
+              return (
+                <li key={number}>{option}</li>
+              )
+            })}
+            <li>{flashCard.correct_answer}</li>
+          </ol>
+          </div>
         }
       </div>
       
