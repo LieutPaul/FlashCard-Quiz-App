@@ -1,7 +1,11 @@
+import FlashcardList from "./components/FlashcardList";
+import { sampleFlashCardList } from "./SampleFlashCards";
+import React from "react";
 export default function App() {
+  const [flashCards,setFlashCards] = React.useState(sampleFlashCardList)
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div>
+      <FlashcardList flashCards={flashCards}/>
     </div>
   );
 }
