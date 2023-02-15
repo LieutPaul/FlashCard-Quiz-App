@@ -20,13 +20,13 @@ button{
 
 @media (max-width : 991px){
     .margin_small{
-        margin-top: 10px !important;
+        margin-top: 15px !important;
     }
 }
 
 .app_name{
     text-align: center;
-    font-size: 3rem;
+    font-size: 5rem;
     color:white;
     margin-bottom: 5px;
     font-family: 'Zeyada', cursive;

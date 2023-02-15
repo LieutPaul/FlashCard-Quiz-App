@@ -2,14 +2,17 @@ import React from 'react'
 import './Navbar.css'
 
 export default function Navbar() {
-    
+    var API_URL="https://opentdb.com/api.php?";
+
     const [category, setCategory] = React.useState("any");
     const [numberOfQuestions, setNumberofQuestions] = React.useState(10);
-
-    const handleChangeCategory = (e) => {
-        setCategory(e.target.value);
-    };
-
+    
+    const getNewQuestions = (e) =>{
+        e.preventDefault();
+        API_URL = API_URL + "amount=" + numberOfQuestions + "&category=" + category;
+        console.log(API_URL);
+    }
+    
     return (
         <div className='NavBar container-fluid'>
             <div className='row'>
@@ -22,7 +25,9 @@ export default function Navbar() {
                     <label htmlFor="trivia_category">Category: </label>
                 </div>
                 <div className='col-lg-4 margin_small'>
-                    <select name="trivia_category" className="form-control" id="trivia_category" value={category} onChange={handleChangeCategory}>
+                    <select name="trivia_category" className="form-control" id="trivia_category" value={category} onChange={(e)=>{
+                        setCategory(e.target.value);
+                    }}>
                         <option value="any">Any Category</option>
                         <option value="9">General Knowledge</option>
                         <option value="10">Entertainment: Books</option>
@@ -67,10 +72,8 @@ export default function Navbar() {
                         max="50"
                     />
                 </div>
-                <div className='col-lg-2 margin_small' style={{"margin":"auto"}}>
-                    <button className='btn btn-outline-primary' onClick={()=>{
-                        console.log(category,numberOfQuestions)
-                    }}>Submit</button>
+                <div className='col-lg-2 margin_small' style={{"textAlign":"center"}}>
+                    <button className='btn btn-outline-primary' onClick={getNewQuestions}>Submit</button>
                 </div>
             </div>
         </div>
