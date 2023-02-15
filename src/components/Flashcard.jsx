@@ -16,15 +16,15 @@ export default function Flashcard({flashCard}){
         }
         <br/>
         {flip === false && 
-        <div>
-          <ol>
-            {flashCard.incorrect_answers.map((option,number) => {
-              return (
-                <li key={number} dangerouslySetInnerHTML={{ __html: option}}></li>
-              )
-            })}
+          <div>
+            <ol>
+              {flashCard.incorrect_answers.map((option,number) => {
+                return (
+                  <li key={number} dangerouslySetInnerHTML={{ __html: option}}></li>
+                )
+              })}
               <li dangerouslySetInnerHTML={{ __html: flashCard.correct_answer}}></li>
-          </ol>
+            </ol>
           </div>
         }
       </div>
