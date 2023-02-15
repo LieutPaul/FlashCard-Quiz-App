@@ -1,5 +1,5 @@
 import React from 'react'
-import Flashcard from './Flashcard'
+import Flashcard from '../Flashcard/Flashcard'
 
 export default function FlashcardList({flashCards}){
   return (

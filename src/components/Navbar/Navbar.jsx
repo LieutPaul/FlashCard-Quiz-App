@@ -20,7 +20,11 @@ export default function Navbar({setFlashCards}) {
     
     const getNewQuestions = (e) =>{
         e.preventDefault();
-        API_URL = API_URL + "amount=" + numberOfQuestions + "&category=" + category;
+        if(category !== "any"){
+            API_URL = API_URL + "amount=" + numberOfQuestions + "&category=" + category;
+        }else{
+            API_URL = API_URL + "amount=" + numberOfQuestions
+        }
         getQuestions();
     }
     
