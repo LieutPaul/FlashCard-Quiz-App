@@ -3,6 +3,7 @@ import { sampleFlashCardList } from "./SampleFlashCards";
 import axios from 'axios'
 import React from "react";
 import './App.css'
+import Navbar from "./components/Navbar";
 export default function App() {
   const API_URI="https://opentdb.com/api.php?amount=10";
   const [flashCards,setFlashCards] = React.useState(sampleFlashCardList)
@@ -22,6 +23,7 @@ export default function App() {
 
   return (
     <div>
+      <Navbar/>
       <FlashcardList flashCards={flashCards}/>
     </div>
   );

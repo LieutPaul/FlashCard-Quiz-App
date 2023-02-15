@@ -1,0 +1,32 @@
+.NavBar{
+    background-color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+label{
+    color: white;
+}
+
+/* #trivia_category, #trivia_amount{
+    width:30% !important;
+    display: inline-block;
+    margin-left: 15px !important;
+}
+
+button{
+    margin-left: 15px !important;
+} */
+
+@media (max-width : 991px){
+    .margin_small{
+        margin-top: 10px !important;
+    }
+}
+
+.app_name{
+    text-align: center;
+    font-size: 3rem;
+    color:white;
+    margin-bottom: 5px;
+}
