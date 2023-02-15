@@ -1,8 +1,19 @@
-import React from 'react'
-import './Navbar.css'
+import React from 'react';
+import axios from 'axios';
+import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({setFlashCards}) {
+
     var API_URL="https://opentdb.com/api.php?";
+
+    const getQuestions = async () => {
+        try {
+            const fetchData = await axios.get(API_URL)
+            setFlashCards(fetchData.data.results);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const [category, setCategory] = React.useState("any");
     const [numberOfQuestions, setNumberofQuestions] = React.useState(10);
@@ -10,7 +21,7 @@ export default function Navbar() {
     const getNewQuestions = (e) =>{
         e.preventDefault();
         API_URL = API_URL + "amount=" + numberOfQuestions + "&category=" + category;
-        console.log(API_URL);
+        getQuestions();
     }
     
     return (
