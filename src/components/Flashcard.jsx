@@ -10,9 +10,9 @@ export default function Flashcard({flashCard}){
       <div className='card-body'>
         {
           flip===true ? 
-            flashCard.correct_answer
+            <div dangerouslySetInnerHTML={{ __html: flashCard.correct_answer}}></div>
           :
-            flashCard.question
+            <div dangerouslySetInnerHTML={{ __html: flashCard.question}}></div>
         }
         <br/>
         {flip === false && 
@@ -20,10 +20,10 @@ export default function Flashcard({flashCard}){
           <ol>
             {flashCard.incorrect_answers.map((option,number) => {
               return (
-                <li key={number}>{option}</li>
+                <li key={number} dangerouslySetInnerHTML={{ __html: option}}></li>
               )
             })}
-            <li>{flashCard.correct_answer}</li>
+              <li dangerouslySetInnerHTML={{ __html: flashCard.correct_answer}}></li>
           </ol>
           </div>
         }
