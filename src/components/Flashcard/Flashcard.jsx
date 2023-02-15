@@ -2,7 +2,13 @@ import React from 'react'
 import './Flashcard.css'
 
 export default function Flashcard({flashCard}){
+  
+  React.useEffect(()=>{
+    setFlip(false); // To make card unflipped when new questions come
+  },[flashCard]);
+
   const [flip,setFlip] = React.useState(false);
+
   return (
     <div className="card" id="card" onClick={()=>{
         setFlip(!flip)
